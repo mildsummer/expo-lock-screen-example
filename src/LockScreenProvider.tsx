@@ -5,6 +5,7 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Modal, Text, ViewStyle, StyleSheet, View, TextStyle, TouchableOpacity } from "react-native";
 import * as LocalAuthentication from "expo-local-authentication";
+import useStorage from "./useStorage";
 
 // props
 // 型定義部
@@ -55,7 +56,8 @@ const styles: Styles = StyleSheet.create<Styles>({
 /**
  * デフォルトのタイムアウト時間（ms）
  */
-const DEFAULT_TIMEOUT = 30000;
+const DEFAULT_TIMEOUT = 10000;
+const STORAGE_KEY = "APP_LOCKED";
 
 /**
  * useIsLocked
@@ -78,7 +80,11 @@ function LockScreenProvider({ children, timeout = DEFAULT_TIMEOUT }): React.Func
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // ロック状態
-  const [isLocked, setIsLocked] = useState<boolean>(false);
+  const [isLockedStr, setIsLockedStr] = useStorage(STORAGE_KEY, "false");
+  const setIsLocked = useCallback((isLocked) => {
+    setIsLockedStr(isLocked.toString());
+  }, []);
+  const isLocked = isLockedStr === "true";
 
   // センサーや生体認証データが無いために認証ができない場合の処理
   const fallbackAuthentication = useCallback(() => {
