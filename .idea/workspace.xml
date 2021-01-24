@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c351cae2-d8e4-40a0-a346-d19c8190c4a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LockScreenProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/LockScreenProvider.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LockScreenProvider.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="77" column="55" lean-forward="true" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
+            <state relative-caret-position="457">
+              <caret line="100" column="37" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="37" />
               <folding>
                 <element signature="e#58#142#0" expanded="true" />
               </folding>
@@ -154,7 +152,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1619000" />
+    <option name="totallyTimeSpent" value="3661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="38" width="1440" height="796" extended-state="0" />
@@ -221,8 +219,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LockScreenProvider.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="77" column="55" lean-forward="true" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
+        <state relative-caret-position="457">
+          <caret line="100" column="37" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="37" />
           <folding>
             <element signature="e#58#142#0" expanded="true" />
           </folding>

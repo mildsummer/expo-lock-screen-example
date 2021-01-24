@@ -80,21 +80,28 @@ function LockScreenProvider({ children, timeout = DEFAULT_TIMEOUT }): React.Func
   // ロック状態
   const [isLocked, setIsLocked] = useState<boolean>(false);
 
+  // センサーや生体認証データが無いために認証ができない場合の処理
+  const fallbackAuthentication = useCallback(() => {
+    setIsLocked(false); // 仮でそのままロック解除する
+  }, []);
+
   // ロック/ロック解除処理（memo化）
   const lock = useCallback(() => setIsLocked(true), []);
   const unlock = useCallback(async () => {
     const hasHardware = await LocalAuthentication.hasHardwareAsync();
     if (!hasHardware) {
-      setIsLocked(false);
+      fallbackAuthentication();
       return;
     }
     const { success, error } = await LocalAuthentication.authenticateAsync({
       promptMessage: "ロック画面を解除します",
     });
-    if (success || error === "passcode_not_set") {
+    if (success) {
       setIsLocked(false);
+    } else if (error !== "user_cancel") {
+      fallbackAuthentication();
     }
-  }, []);
+  }, [fallbackAuthentication]);
 
   // タイマー処理を更新する（memo化）
   // タッチ操作時に連続で呼ばれる
