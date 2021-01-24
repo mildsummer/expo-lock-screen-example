@@ -55,7 +55,7 @@ const styles: Styles = StyleSheet.create<Styles>({
 /**
  * デフォルトのタイムアウト時間（ms）
  */
-const DEFAULT_TIMEOUT = 3000;
+const DEFAULT_TIMEOUT = 30000;
 
 /**
  * useIsLocked
